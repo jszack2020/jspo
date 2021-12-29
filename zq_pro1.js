@@ -19,7 +19,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 
 var fs = require("fs");
 let notifyStr=''
-let userCookie = ($.isNode() ? process.env.zqkdCookie1 : $.getdata('zqkdCookie')) || '';
+let userCookie = ($.isNode() ? process.env.zqkdCookie : $.getdata('zqkdCookie')) || '';
 let userCookieArr = []
 let cash = ($.isNode() ? process.env.zqkdCash : $.getdata('zqkdCash')) || '1';	//提现额度
 let withdraw_auto=process.env.zqkd_withdraw_auto||1	//是否打开自动提现，默认关闭
