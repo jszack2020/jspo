@@ -8,7 +8,7 @@ export zqkdCookie='xxx@xxx'
 ck包含uid,zqkey,zqkey_id三个变量就行
 */
 
-const a=new Env('\u949f\u60c5\u81ea\u52a8\u9605\u8bfb');
+const $ = new Env("钟情自动阅读");
 let logDebug = 0
 const CryptoJS = require('crypto-js')
  
