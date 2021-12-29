@@ -22,7 +22,7 @@ let notifyStr=''
 let userCookie = ($.isNode() ? process.env.zqkdCookie : $.getdata('zqkdCookie')) || '';
 let userCookieArr = []
 let cash = ($.isNode() ? process.env.zqkdCash : $.getdata('zqkdCash')) || '1';	//提现额度
-let withdraw_auto=process.env.zqkd_withdraw_auto||1	//是否打开自动提现，默认关闭
+let withdraw_auto=process.env.zqkd_withdraw_auto||0	//是否打开自动提现，默认关闭
 
 let zqbody
 let usernmae="",zqcookie="";
