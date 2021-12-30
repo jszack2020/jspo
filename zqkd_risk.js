@@ -36,8 +36,9 @@ let nickname = []
         }
         
         await initAccountInfo()
-        await RunRiskInfo()
         await RunUserBalance()
+        await RunRiskInfo()
+
         
         await showmsg()
     }
@@ -191,13 +192,13 @@ async function getBalance() {
     if(!result) return
     
     if(result.status == 0) {
-        notifyStr += `\n账户${userIdx+1} ${nickname[userIdx]}: \n`
-        notifyStr += `【金币总数】：${result.user.score}\n`
-        notifyStr += `【历史收益】：${result.user.total_score}\n`
-        notifyStr += `【今日收益】：${result.user.today_score}\n`
+        notifyStr += `\n账户${userIdx+1} ${nickname[userIdx]}:\n`
+        notifyStr += `【余额】：${Math.round(result.user.score/100)/100}元\n`
+        notifyStr += `【总收益】：${Math.round(result.user.total_score/100)/100}元\n`
+        notifyStr += `【今日】：${Math.round(result.user.today_score/100)/100}元\n`
         for(let i=0; i<result.history.length; i++) {
             let rewardItem = result.history[i]
-            if(rewardItem.newdate.indexOf('今日收益') > -1) {
+            if(rewardItem.newdate.indexOf('今日') > -1) {
                 for(let j=0; j<rewardItem.group.length; j++) {
                     let groupItem = rewardItem.group[j]
                     notifyStr += `----【${groupItem.name}】：${groupItem.money}\n`
